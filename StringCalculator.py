@@ -1,4 +1,3 @@
-def add (input): 
-  if input==" "
-        return 0
-   
+def add (y): 
+  if y == " ":
+    return 0
