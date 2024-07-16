@@ -1,5 +1,4 @@
 def add (input): 
-  if not input=="emptry string"
-        return 
-    else:
+  if input==" "
         return 0
+   
