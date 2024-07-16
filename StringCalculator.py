@@ -11,7 +11,7 @@ def add (y):
     c = num1 + num2
     
     # store result into the string
-    result_str = str(c)
-    
-    return result_str
+    return c
+  else:
+    return
     
