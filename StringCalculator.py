@@ -1,2 +1,5 @@
 def add (input ): 
-  return;
+  if not input:
+        return 
+    else:
+        return "0"
