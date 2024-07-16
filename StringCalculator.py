@@ -2,16 +2,10 @@
 def add (y): 
   if y == " " or y =="0" :
     return 0
-  elif ("y"):
+  else:
     x= y.split(',')
     num1 = int(x[0].strip())
     num2 = int(x[1].strip())
-   
-    # addition
     c = num1 + num2
-    
-    # store result into the string
     return c
-  else:
-    return
     
