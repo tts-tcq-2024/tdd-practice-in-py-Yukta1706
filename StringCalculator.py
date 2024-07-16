@@ -1,4 +1,4 @@
-#test case 1 & 2 & 3:
+#test case 1 & 2 & 3
 def add(y):
     if y == " " or y == "0":
         return 0
