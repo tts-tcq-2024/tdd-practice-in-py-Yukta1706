@@ -1,20 +1,20 @@
-def add(y):
-    if not y.strip():  # Check for empty input
+def parse_input(input_string):
+    if input_string.startswith('//'):
+        delimiter = input_string[2]
+        return input_string[4:], delimiter
+    return input_string, ','
+ 
+def split_and_convert(input_string, delimiter):
+    return [int(num) for num in input_string.replace('\n', delimiter).split(delimiter)]
+ 
+def filter_numbers(numbers):
+    return [num for num in numbers if num <= 1000]
+ 
+def add(input_string):
+    if not input_string:
         return 0
-    
-    if y.startswith("//"):  # Check for custom delimiter
-        delimiter_index = y.index("\n")
-        delimiter = y[2:delimiter_index]
-        numbers = y[delimiter_index+1:].split(delimiter)
-    else:
-        numbers = y.replace("\n", ",").split(",")
-
-    # Convert numbers to integers and filter out numbers greater than 1000
-    nums = [int(num) for num in numbers if num.isdigit() and int(num) <= 1000]
-
-    # Check for invalid input with custom delimiter
-    if any(not num.isdigit() for num in numbers if delimiter in num):
-        return "Invalid input: Please provide valid integers separated by the custom delimiter."
-
-    return sum(nums)
+    parsed_input, delimiter = parse_input(input_string)
+    numbers = split_and_convert(parsed_input, delimiter)
+    filtered_numbers = filter_numbers(numbers)
+    return sum(filtered_numbers)
     
